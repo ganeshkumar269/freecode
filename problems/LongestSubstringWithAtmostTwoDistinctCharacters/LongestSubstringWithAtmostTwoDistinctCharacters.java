@@ -6,30 +6,7 @@ import java.util.stream.IntStream;
 public class LongestSubstringWithAtmostTwoDistinctCharacters {
     public static int lengthOfLongestSubstringTwoDistinct(String s) {
         // write your code here
-        if (s == null || s.length() == 0) {
-            return 0;
-        }
-        char[] chs = s.toCharArray();
-        int n = s.length();
-
-        HashMap<Character, Integer> count = new HashMap<>();
-
-        int longest = 0;
-
-        int firstIdx = 0;
-
-        for (int i = 0; i < n; i++) {
-            count.put(chs[i], count.getOrDefault(chs[i], 0) + 1);
-            while (count.size() > 2) {
-                count.put(chs[firstIdx], count.get(chs[firstIdx]) - 1);
-                if (count.get(chs[firstIdx]) == 0) {
-                    count.remove(chs[firstIdx]);
-                }
-                firstIdx++;
-            }
-            longest = Math.max(longest, i - firstIdx + 1);
-        }
-        return longest;
+        return 0;
     }
     public static void main(String[] args) throws Exception {
         Scanner in = new Scanner(new File("./in.txt"));
